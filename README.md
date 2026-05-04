@@ -1,3 +1,6 @@
+# Youtube Demo Link
+https://youtu.be/T8XsXvRmkuU
+
 # 📚 Local Wikipedia RAG Assistant
 
 A ChatGPT-style question-answering system that runs **entirely on your local machine**. It uses Retrieval-Augmented Generation (RAG) to answer questions about famous people and places using Wikipedia data, a local LLM (via Ollama), and a local vector database (ChromaDB).

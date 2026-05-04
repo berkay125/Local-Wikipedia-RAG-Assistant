@@ -101,9 +101,15 @@ def retrieve(query: str, top_k: int = TOP_K) -> dict:
 
     where_filter = None
     if query_type == "person":
-        where_filter = {"entity_type": "person"}
+        if len(query_info["matched_people"]) == 1:
+            where_filter = {"entity_name": query_info["matched_people"][0]}
+        else:
+            where_filter = {"entity_type": "person"}
     elif query_type == "place":
-        where_filter = {"entity_type": "place"}
+        if len(query_info["matched_places"]) == 1:
+            where_filter = {"entity_name": query_info["matched_places"][0]}
+        else:
+            where_filter = {"entity_type": "place"}
 
     try:
         results = collection.query(
